@@ -1,0 +1,14 @@
+.navbar-nav.ml-auto li a {
+    color: #fff;
+}
+
+#rest_logo{
+    margin-left: 15%;
+}
+
+.franja{
+    padding-top: 12px;
+}
+.dropdown-item{
+    color: #000;
+}

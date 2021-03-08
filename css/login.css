@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #666;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100hv;
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0049a2, #002A5E, #00224B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.login{
+    text-align: center;
+    position: relative;
+    background: #fff;
+    height: 470px;
+    width: 320px;
+    border-radius: 25px;
+    box-shadow: 15px 15px 20px #111;
+}
+
+input{
+    width: 85%;
+    border: 0;
+    border-radius: 25px;
+    margin-bottom: 1%;
+    border-bottom: 2px solid #444;
+    padding: 12px 40px 12px 20px;
+}
+
+input,
+.group i, p, a{
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.group{
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.group2{
+    margin-top: 20%;
+    position: relative;
+}
+
+.group i{
+    position: absolute;
+    top: 40%;
+    right: 12%;
+}
+
+.submit-btn{
+    padding: 12px;
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0049a2, #002A5E, #00224B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 5%;
+}
+
+i.fa.fa-empire, a{
+    color:#093637;
+}
+
+i.fa.fa-empire{
+    font-size: 60px;
+    margin-top: 10%;
+    margin-bottom: 6%;
+}
+
+h2{
+    margin-top: 8%;
+    margin-bottom: 12%;
+    color: #0049a2;
+}
+
+p{
+    margin-top: 5%;
+}
+
+input:focus,
+input:focus::placeholder,
+input:focus+i{
+    color: rgb(58, 109, 131);
+}
+
+.submit-btn:focus{
+    color: #fff;
+}
+
+input:focus{
+    outline: 0;
+}
+.alert{
+    font-size: 20px;
+    width: 80%;
+    border-radius: 6px;
+    margin: 0px auto;
+}
+.msg_error{
+    color: #e65656;
+}
+.msg_save{
+    color: #126e00;
+}
+.alert p{
+    padding: 10px;
+}
+
+/*
+body:before,
+body:after{
+    content: "";
+    position: absolute;
+    height: 300px;
+    width: 500px;
+}
+
+body:before{
+    background: #44A08D;  /* fallback for old browsers *//*
+    background: -webkit-linear-gradient(to right, #093637, #44A08D);  /* Chrome 10-25, Safari 5.1-6 *//*
+    background: linear-gradient(to right, #093637, #44A08D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *//*
+    bottom: 0;
+    left: 0;
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+body:after{
+    background: #44A08D;  /* fallback for old browsers *//*
+    background: -webkit-linear-gradient(to right, #44A08D, #093637);  /* Chrome 10-25, Safari 5.1-6 *//*
+    background: linear-gradient(to right, #44A08D, #093637); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *//*
+    top: 0;
+    right: 0;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+*/
+
+
+@media (max-width: 767px){
+    /*body:before,
+    body:after{
+        height: 150px;
+        width: 300px;
+    }*/
+}

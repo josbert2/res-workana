@@ -1,0 +1,562 @@
+:root {
+    --azul-oscuro: #0049a2;
+    --amarillo: #d7e811;
+}
+
+*{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#cargos{
+    width: 95%;
+    padding-left: 5%;
+    margin-top: 8%;
+}
+
+#cargos b{
+    font-size: bold;
+}
+
+.precios p{
+    margin-bottom: 0.5rem !important;
+}
+
+
+#resalto{
+    padding: 4px;
+}
+
+#resalto2{
+    
+    background-color: #ccd9ff;
+    padding: 4px;
+}
+
+form{
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+section{
+    width: 30%;
+}
+
+.button{
+    padding: 5px; 
+    border-radius: 5px;
+    outline: none;
+    background: var(--azul-oscuro);
+    color: white;
+    box-shadow: 5px 5px 10px #888888;
+}
+
+strong{
+    font-size: 18px;
+    padding: 3%;
+    background: var(--amarillo);
+    color: var(--azul-oscuro);
+    border: 1px solid var(--azul-oscuro);
+}
+
+.encabezado{
+    padding-left: 5%;
+    margin-top: 2.5%;
+}
+
+.contenido{
+    padding-left: 5%;
+    margin-top: 5%;
+}
+
+.contenido_caja{
+    padding: 5%;
+}
+
+.contenido_caja button{
+    width: 60%;
+    margin-left: 20%;
+}
+
+.caja_simple{
+    width: 95%;
+    border: 1px solid var(--azul-oscuro);
+    border-radius: 5px;
+    margin-bottom: 5%;
+}
+
+.caja_simple .contenido_caja p{
+    font-size: 16px !important;
+}
+
+.caja_info{
+    width: 95%;
+    border: 1px solid var(--azul-oscuro);
+    border-radius: 5px;
+    margin-bottom: 5%;
+}
+
+.beneficiarios .caja_info{
+    width: 100%;
+}
+
+.titulo_caja{
+    padding: 5px 0 5px 0;
+    background: var(--azul-oscuro);
+    border-radius: 5px 5px 0 0;
+    
+}
+
+.franja_body{
+    background-color: var(--amarillo);
+    padding-top: 6px;
+}
+
+.titulo_caja .container{
+    width: 100%;
+    font-size: 24px;
+    padding-left: 5%;
+    font-weight: 500;
+    background: var(--azul-oscuro);
+    color: white;
+    border: 0px;
+    outline: 0px;
+    margin-bottom: 5px solid var(--amarillo);
+}
+
+.titulo_caja label{
+    margin: 0 !important;
+}
+
+.plan{
+    margin-bottom: 5%;
+    width: 95%;
+    border: 1px solid var(--azul-oscuro);
+    border-radius: 5px;
+    margin-bottom: 5%;
+}
+
+.precios{
+    display: flex;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+.precios .izquerda{
+    width: 60%;
+}
+
+.precios .derecha{
+    width: 40%;
+    padding-top: 21px;
+}
+
+.valor{
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--azul-oscuro);
+}
+
+.datos_pago{
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.datos_pago .columna{
+    width: auto;
+}
+
+.datos_pago .izquerda{
+    width: 35%;
+}
+
+.datos_pago .derecha{
+    width: 65%;
+}
+
+.datos_pago #vm{
+    display: block;
+    padding-top: 10%;
+    padding-left: 10%;
+    font-weight: bold;
+}
+
+.columnas{
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.titular select {
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+}
+
+.formulario label{
+    font-weight: bold;
+}
+
+.formulario .input{
+    width: 100%;
+    margin-bottom: 3%;
+    padding: 5px; 
+    border: 1px solid var(--azul-oscuro);
+    border-radius: 5px;
+    outline: none;
+}
+
+.error{
+    border: 1px solid red !important;
+}
+
+.formulario .button{
+    width: 100%;
+}
+
+.beneficiarios {
+    display: none;
+    height: 500px;
+    overflow-y: auto;
+    margin-bottom: 5%;
+}
+
+/*
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent *//*
+}
+*/
+
+#cont_titular{
+    display: none;
+}
+
+#cont_modal{
+    margin-top: 2.5%;
+    display: none;
+}
+
+.nombre_caja{
+    padding-left: 5%;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.columna{
+    width: 49%;
+}
+
+.columna #num_benef{
+    width: 95%;
+}
+
+.columna #fecha_nac{
+    display: block;
+}
+
+.flex{
+    display: flex !important;
+    justify-content: space-around;
+}
+
+.middle{
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.columna #dia, #mes{
+    width: 28%;
+    font-size: 12px;
+    padding: 0;
+}
+
+.columna #ano{
+    width: 39.5%;
+    font-size: 12px;
+    padding: 0;
+}
+
+.izquerda{
+    margin-right: 1.5%;
+}
+
+.derecha{
+    margin-left: 1.5%;
+}
+
+#valor_mensual, #precio_sin_dscto, #ahorro, #valor_pagar{
+    color: var(--azul-oscuro);
+}
+
+#beneficios p, #enun_bene p{
+    font-size: 18px !important;
+}
+
+#arriba{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3%;
+    padding-top: 2.5%;
+    /*
+    padding-bottom: 1.5%;
+    */
+}
+
+#arriba #enun_bene{
+    padding-top: 10px;
+}
+
+#arriba #rest{
+    color: var(--azul-oscuro);
+}
+
+#arriba #rest h4{
+    font-weight: bold;
+}
+
+#arriba #rest p{
+    font-size: 18px;
+}
+
+#arriba div{
+    width: 31.1%;
+    padding-right: 3%;
+}
+
+#arriba #beneficios h4{
+    font-weight: bold;
+}
+
+#arriba img{
+    width: 16px;
+    height: 16px;
+}
+
+#abajo{
+    display: flex;
+    justify-content: space-around;
+    /*
+    width: 92%;
+    margin-left: 4%;
+    */
+    width: 100%;
+    padding: 2.5%;
+    background-color: rgb(242, 252, 164, 0.5);
+    border-radius: 10px;
+    margin-top: 3%;
+    /*
+    margin-bottom: 3
+    */
+    padding-bottom: 4%;
+}
+
+#abajo img{
+    width: 100%;
+}
+
+#abajo div{
+    width: 47.5%;
+}
+
+#abajo #eslogan{
+    margin-top: 1.5%;
+    display: block;
+}
+
+#frase{
+    font-family: Roboto, 'Segoe UI', Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: grey;
+    text-align: center;
+}
+
+#btn_pagar{
+    background: #bbb;
+}
+
+/********************************************************/
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.planes .checkmark{
+    margin-left: 89%;
+    margin-top: 1.5%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: white;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 8px;
+  top: 0;
+  width: 10px;
+  height: 20px;
+  border: solid var(--azul-oscuro);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.modal-body, .modal-title{
+    font-size: 18px !important;
+}
+
+.modal-footer .btn-primary{
+    background: var(--amarillo);
+    color: var(--azul-oscuro);
+    border-color: var(--azul-oscuro);
+}
+
+.modal-footer .btn-secondary{
+    background: var(--azul-oscuro);
+    color: white;
+    border-color: var(--azul-oscuro);
+}
+
+/***********************************************************/
+
+@media (max-width:1260px){
+    .titular{
+        height: 500px;
+        overflow-y: auto;
+    }
+    
+    .columnas{
+        display: block;
+    }
+    
+    .titular .columna{
+        width: 100%;
+    }
+    
+    .titular .izquerda, .derecha{
+        margin: 0;
+    }
+    
+    .columna #ano{
+        width: 40.5%;
+    }
+    
+    #frase{
+        font-size: 16px;
+    }
+    
+    .datos_pago{
+        display: block;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .datos_pago .columna{
+        width: 90%;
+    }
+    
+    .datos_pago select{
+        width: 90% !important;
+        margin-left: 10%;
+    }
+    
+
+}
+
+@media (max-width:800px){
+    form{
+        flex-direction: column;
+    }
+    
+    section{
+        width: 100%;
+    }
+    
+    .formulario .input{
+        width: 95%;
+    }
+    
+    .titular{
+        height: auto;
+        overflow-y: hidden;
+    }
+    
+    .columna #ano{
+        width: 36.5%;
+    }
+    
+    .formulario .button{
+        width: 95%;
+    }
+    
+    .beneficiarios .caja_info{
+        width: 95%;
+    }
+
+    #arriba{
+        display: none;
+    }
+    
+    #abajo{
+        display: block;
+    }
+    
+    #abajo div{
+        width: 100%;
+    }
+}
