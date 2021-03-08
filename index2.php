@@ -309,8 +309,8 @@ error_reporting(E_ERROR | E_PARSE);
                                     </div>
                                 </div>
                                 <div class="container-items-step w400" data-id="1" style="display:none">
-                                    <form action="" id="titular">
-                                        <div class="row">
+                                    <form  id="titular2">
+                                        <div class="row" id="titular">
                                             <div class="col-md-12 title-step">
                                                 Datos del Titular Beneficiario
                                             </div>
@@ -332,80 +332,50 @@ error_reporting(E_ERROR | E_PARSE);
                                             </div>
                                             <div class="col-md-6 form-control-input flex-column">
                                                 <label for="">Fecha de Naimiento*</label>
-                                                <div class="d-flex ">   
-                                                <div class="" style="    flex: 1 1 100%;">
-                                                    <div class="cont_select_center">
-                                                        <div class="select_mate" data-mate-select="active" >
-                                                        <select name="" onchange="" onclick="return false;" id="dia">>
-                                                        <option selected="true" disabled="disabled" value="0">día</option>
-                                                        <?php for($i = 1; $i <= 31; $i++){ ?>
-                                                            <?php if($i < 10){ ?>
-                                                                <option value="<?php echo "0$i"?>"><?php echo $i?></option>
-                                                            <?php } else { ?>
-                                                                <option value="<?php echo $i?>"><?php echo $i?></option>
-                                                            <?php } ?>
-                                                        <?php } ?>
+                                                <div class="d-flex " style="height:46px">   
+                                                <div class="m-r-10" style="    flex: 1 1 100%;">
+                                                    <div class="select-editable" style="border-radius: 5px 0 0 5px;">
+                                                        <select id="dia" style="border-radius: 5px 0 0 5px;" onchange="this.nextElementSibling.value=this.value">
+                                                            <option selected="true" disabled="disabled" value="0">día</option>
+                                                                <?php for($i = 1; $i <= 31; $i++){ ?>
+                                                                    <?php if($i < 10){ ?>
+                                                                        <option value="<?php echo "0$i"?>"><?php echo $i?></option>
+                                                                    <?php } else { ?>
+                                                                        <option value="<?php echo $i?>"><?php echo $i?></option>
+                                                                    <?php } ?>
+                                                                <?php } ?>
                                                         </select>
-                                                        <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
-                                                        <span onclick="open_select(this)" class="icon_select_mate" >
-                                                            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                                                <path d="M0-.75h24v24H0z" fill="none"/>
-                                                            </svg>
-                                                        </span>
-                                                            <div class="cont_list_select_mate">
-                                                                <ul class="cont_select_int">  </ul> 
-                                                            </div>
-                                                        </div>
-                                                    </div> 
+                                                        <input type="text" style="border-radius: 5px 0 0 5px;" name="format" value=""/>
+                                                    </div>
+                                                   
+                                                </div>
+                                                <div class="m-r-10" style="    flex: 1 1 100%;">
+                                                    <div class="select-editable">
+                                                        <select id="dia" onchange="this.nextElementSibling.value=this.value">
+                                                            <option selected="true" disabled="disabled" value="0">mes</option>
+                                                            <?php for($i = 1; $i <= 12; $i++){ ?>
+                                                                <?php if($i < 10){ ?>
+                                                                    <option value="<?php echo "0$i"?>"><?php echo $i?></option>
+                                                                <?php } else { ?>
+                                                                    <option value="<?php echo $i?>"><?php echo $i?></option>
+                                                                <?php } ?>
+                                                            <?php } ?>
+                                                        </select>
+                                                        <input type="text" name="format" value=""/>
+                                                     </div>
+                                                     
                                                 </div>
                                                 <div class="" style="    flex: 1 1 100%;">
-                                                    <div class="cont_select_center">
-                                                        <div class="select_mate" data-mate-select="active" >
-                                                        <select name="" onchange="" onclick="return false;" id="mes">
-                                                        <option selected="true" disabled="disabled" value="0">mes</option>
-                                                        <?php for($i = 1; $i <= 12; $i++){ ?>
-                                                            <?php if($i < 10){ ?>
-                                                                <option value="<?php echo "0$i"?>"><?php echo $i?></option>
-                                                            <?php } else { ?>
-                                                                <option value="<?php echo $i?>"><?php echo $i?></option>
-                                                            <?php } ?>
-                                                        <?php } ?>
-                                                        </select>
-                                                        <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
-                                                        <span onclick="open_select(this)" class="icon_select_mate" >
-                                                            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                                                <path d="M0-.75h24v24H0z" fill="none"/>
-                                                            </svg>
-                                                        </span>
-                                                            <div class="cont_list_select_mate">
-                                                                <ul class="cont_select_int">  </ul> 
-                                                            </div>
-                                                        </div>
-                                                    </div> 
-                                                </div>
-                                                <div class="" style="    flex: 1 1 100%;">
-                                                    <div class="cont_select_center">
-                                                        <div class="select_mate" data-mate-select="active" >
-                                                        <select name="" onchange="" onclick="return false;" id="ano">
+                                                    <div class="select-editable" style="border-radius: 0 5px 5px 0">
+                                                        <select style="border-radius: 0 5px 5px 0" id="ano" onchange="this.nextElementSibling.value=this.value">
                                                             <option selected="true" disabled="disabled" value="0">año</option>
                                                             <?php for($i = 1920; $i <= 2020; $i++){ ?>
                                                             <option value="<?php echo $i?>"><?php echo $i?></option>
                                                             <?php } ?>
                                                         </select>
-                                                        <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
-                                                        <span onclick="open_select(this)" class="icon_select_mate" >
-                                                            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                                                <path d="M0-.75h24v24H0z" fill="none"/>
-                                                            </svg>
-                                                        </span>
-                                                            <div class="cont_list_select_mate">
-                                                                <ul class="cont_select_int">  </ul> 
-                                                            </div>
-                                                        </div>
-                                                    </div> 
+                                                        <input type="text" name="format" value=""/>
+                                                    </div>
+                                                 
                                                 </div>
                                                 </div>
                                             </div>
@@ -571,10 +541,10 @@ error_reporting(E_ERROR | E_PARSE);
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="m-t-20">
-                                                        <button class="btn__table__main color__secondary__main back_to_steps">
+                                                        <button type="button" class="btn__table__main color__secondary__main back_to_steps">
                                                             VOLVER
                                                         </button>
-                                                        <button class="btn__table__main m-l-15">
+                                                        <button   type="button" class="btn__table__main m-l-15">
                                                             CONTINUAR
                                                         </button>
                                                     </div>
@@ -656,7 +626,7 @@ error_reporting(E_ERROR | E_PARSE);
                         <div class="d-flex align-items-center justify-content-center btn-steps">
                             <button type="button" id="next" class="btn-primary-closed">SIGUIENTE</button>
                             <div class="m-l-10">
-                                <button class="btn__table__main" id="step_2_btn" style="display:none">
+                                <button class="btn__table__main" id="step_2_btn" type="button" style="display:none">
                                     REGISTRAR BENEFICIARIOS
                                 </button>
                             </div>
