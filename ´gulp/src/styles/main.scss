@@ -131,8 +131,22 @@ body{
 	color: white;
 	background: url(https://images.unsplash.com/photo-1500417148159-68083bd7333a) center center no-repeat;
 	background-size: cover;
-    width: 100%;
-    padding: 1em 5em;
+  width: 100%;
+  padding: 1em 5em;
+  @include r(768){
+    height: 64vh;
+  }
+}@include r(768){
+  .navbar-toggler-icon{
+    display:none
+  }
+  .navbar-brand{
+    img{
+      margin-left: 0 !important;
+      width: 125px;
+      object-fit: contain;
+    }
+  }
 }
 
 .hero-title {
@@ -292,6 +306,14 @@ body{
   box-sizing: border-box;
 }
 
+.container-contact{
+  border: 1px solid #d1e900;
+  padding: 12px;
+  border-radius: 25px;
+  color:#fff;
+  font-size: 14px;
+}
+
 :root{
  --line-border-fill: #3498db;
  --line-border-empty: #e0e0e0;
@@ -399,7 +421,7 @@ form{
   }
   @include rmin(768){
     .container-steps{
-        width: 650px;
+        width: 550px;
     }
   }
   .price-big{
@@ -730,7 +752,7 @@ form{
   }
 @include rmin(768){
   .hidden-min{
-    display: none;
+    display: none !important;
   }
 }
 .content-collapse{
@@ -843,4 +865,42 @@ form{
     .btn-steps{
       flex-direction: column;
     }
+  }
+
+  @font-face {
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/muli/v22/7Aulp_0qiz-aVz7u3PJLcUMYOFnOkHkw.ttf) format('truetype');
+  }
+  .edit-select select{
+    border:solid #0049a2 1px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+  }
+  .select-editable {
+    position:relative; background-color:white; border:solid #0049a2 1px; height: 100%;
+    width: 100%;
+  }
+  
+  .select-editable select {position:absolute; top:0px; left:0px; font-size:14px; border:none; height: 100%;
+    width: 100%; margin:0;
+    }
+  .select-editable input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 77% !important;
+    padding: 1px;
+    font-size: 12px;
+    border: none !important;
+    height: 100%;
+    padding-left: 12px !important;
+   
+  }
+  .select-editable select:focus, .select-editable input:focus {outline:none;}
+  .flex{
+    flex: 1 1 auto;
   }

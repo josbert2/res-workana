@@ -1,7 +1,7 @@
 
 <?php
 error_reporting(E_ERROR | E_PARSE);
-    include_once('admin/est/headerp.php');
+  
     include_once('admin/config/func.php');
     $num_benef      = 7;
     $num_planes     = getNumPlanes();
@@ -29,6 +29,13 @@ error_reporting(E_ERROR | E_PARSE);
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,800&display=swap" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170826221-1"></script>
+    <link rel="stylesheet" href="admin/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="admin/css/header.css">
+        
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->     
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="admin/bootstrap/bootstrap.js"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
@@ -49,6 +56,7 @@ error_reporting(E_ERROR | E_PARSE);
     <link href="css/datepicker.css?v=<?php echo $randomNumber; ?>" rel="stylesheet">
 </head>
 <body>
+      <?php include_once('admin/est/headermain.php'); ?>
      <!-- Google Tag Manager (noscript) -->
      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTGGS8G"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -275,34 +283,21 @@ error_reporting(E_ERROR | E_PARSE);
                                         <div class="hidden-min m-b-10 color-blue" style="font-weight: 700">
                                             Beneficiario
                                         </div>
-                                        <div class="">
+                                        <div class="edit-select flex">
 
 
-                                            <div class="cont_select_center">
-                                                <div class="select_mate" data-mate-select="active" >
-                                                <select class="input" id="num_benef" name="" onchange="" onclick="return false;" id="">
-                                                    <?php for($i = 0; $i <= $num_benef; $i++){ ?>
-                                                        <?php if($i == 0){ ?>
-                                                            <option selected value="<?php echo $i?>">-</option>
-                                                        <?php } else { ?>
-                                                            <option value="<?php echo $i?>"><?php echo $i?></option>
-                                                        <?php } ?>
-                                                    <?php } ?>
-                                                </select>
-                                                <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
-                                                <span onclick="open_select(this)" class="icon_select_mate" >
-                                                    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                                        <path d="M0-.75h24v24H0z" fill="none"/>
-                                                    </svg>
-                                                </span>
-                                                    <div class="cont_list_select_mate">
-                                                        <ul class="cont_select_int">  </ul> 
-                                                    </div>
-                                                </div>
-                                            </div> 
+                                        <select class="input" id="num_benef" name=""  id="">
+                                                    
+                                            <?php for($i = 0; $i <= $num_benef; $i++){ ?>
+                                                <?php if($i == 0){ ?>
+                                                    <option selected value="<?php echo $i?>">-</option>
+                                                <?php } else { ?>
+                                                    <option value="<?php echo $i?>"><?php echo $i?></option>
+                                                <?php } ?>
+                                            <?php } ?>
+                                        </select>
                                         </div>
-                                        <div class="price-big">
+                                        <div class="price-big flex">
                                             <div class="t" id="vm">
                                                 Valor Mensual: <a id="valor_mensual"></a>
                                             </div>
@@ -312,7 +307,7 @@ error_reporting(E_ERROR | E_PARSE);
                                 <div class="container-items-step w400" data-id="1" style="display:none">
                                     <form  id="titular2">
                                         <div class="row" id="titular">
-                                            <div class="col-md-12 title-step">
+                                            <div class="col-md-12 title-step m-b-20">
                                                 Datos del Titular Beneficiario
                                             </div>
                                             <div class="col-md-12 form-control-input">
@@ -396,12 +391,9 @@ error_reporting(E_ERROR | E_PARSE);
                                             <div class="col-md-6 form-control-input">
                                                 <label for="">Ciudad*</label>   
                                                 <div class="">
-                                                    
-                                            
-
                                                             <div class="cont_select_center">
                                                                 <div class="select_mate" data-mate-select="active" >
-                                                                <select name="" onchange="" onclick="return false;" id="comunas">
+                                                                <select name="" onchange=""  id="comunas">
                                                                     <option value="ANTOFAGASTA">ANTOFAGASTA</option>
                                                                     <option value="CALAMA">CALAMA</option>
                                                                     <option value="COPIAPO">COPIAPO</option>
@@ -443,55 +435,55 @@ error_reporting(E_ERROR | E_PARSE);
                                     </form>
                                     <div class="" id="new_benificiario" style="display:none">
                                             <div class="row">
-                                            <div class="col-md-12 title-step">
+                                                <div class="col-md-12 title-step">
                                                     Datos del Titular Beneficiario
                                                 </div>
                                             </div>  
                                             <div class="">
-                                            <div class="beneficiario-item-collapse">
-                                                Beneficiario 1
-                                            </div>
+                                                <div class="beneficiario-item-collapse">
+                                                    Beneficiario 1
+                                                </div>
                                           
-                                            <div class="row">
-                                               
-                                                <div class="col-md-12 form-control-input">
-                                                    <label for="">Nombre*</label>
-                                                    <input type="text" placeholder="Nombre">
-                                                </div>
-                                                <div class="col-md-6 form-control-input">
-                                                    <label for="">Apellido Paterno*</label>
-                                                    <input type="text" placeholder="Nombre">
-                                                </div>
-                                                <div class="col-md-6 form-control-input">
-                                                    <label for="">Apellido Materno*</label>
-                                                    <input type="text" placeholder="Nombre">
-                                                </div>
-                                                <div class="col-md-6 form-control-input">
-                                                    <label for="">Fecha de Naimiento*</label>   
-                                                    <input type="text" data-toggle="datepicker">
-                                                </div>
-                                                <div class="col-md-6 form-control-input">
-                                                    <label for="">Teléfono*</label>
-                                                    <input type="text" placeholder="Nombre">
-                                                </div> 
-                                                <div class="col-md-6 form-control-input">
-                                                    <label for="">Dirección*</label>
-                                                    <input type="text" placeholder="Nombre">
-                                                </div> 
-                                                <div class="col-md-6 form-control-input edit-select">
-                                                    <label for="">Ciudad*</label>   
-                                                    <select required="" class="input " id="comunas">
-                                                        <option value="ANTOFAGASTA">ANTOFAGASTA</option>
-                                                        <option value="CALAMA">CALAMA</option>
-                                                        <option value="COPIAPO">COPIAPO</option>
-                                                        <option value="COQUIMBO">COQUIMBO</option>
-                                                        <option value="LA SERENA">LA SERENA</option>
-                                                        <option value="SANTIAGO">SANTIAGO</option>
-                                                    </select>
-                                            </div>
+                                                <div class="row">
+                                                
+                                                        <div class="col-md-12 form-control-input">
+                                                            <label for="">Nombre*</label>
+                                                            <input type="text" placeholder="Nombre">
+                                                        </div>
+                                                        <div class="col-md-6 form-control-input">
+                                                            <label for="">Apellido Paterno*</label>
+                                                            <input type="text" placeholder="Nombre">
+                                                        </div>
+                                                        <div class="col-md-6 form-control-input">
+                                                            <label for="">Apellido Materno*</label>
+                                                            <input type="text" placeholder="Nombre">
+                                                        </div>
+                                                        <div class="col-md-6 form-control-input">
+                                                            <label for="">Fecha de Naimiento*</label>   
+                                                            <input type="text" data-toggle="datepicker">
+                                                        </div>
+                                                        <div class="col-md-6 form-control-input">
+                                                            <label for="">Teléfono*</label>
+                                                            <input type="text" placeholder="Nombre">
+                                                        </div> 
+                                                        <div class="col-md-6 form-control-input">
+                                                            <label for="">Dirección*</label>
+                                                            <input type="text" placeholder="Nombre">
+                                                        </div> 
+                                                        <div class="col-md-6 form-control-input edit-select">
+                                                            <label for="">Ciudad*</label>   
+                                                            <select required="" class="input " id="comunas">
+                                                                <option value="ANTOFAGASTA">ANTOFAGASTA</option>
+                                                                <option value="CALAMA">CALAMA</option>
+                                                                <option value="COPIAPO">COPIAPO</option>
+                                                                <option value="COQUIMBO">COQUIMBO</option>
+                                                                <option value="LA SERENA">LA SERENA</option>
+                                                                <option value="SANTIAGO">SANTIAGO</option>
+                                                            </select>
+                                                    </div>
 
 
-                                            </div>
+                                                </div>
 
                                                 <div class="col-md-12">
                                                         (*) Campos obligatorios
@@ -508,75 +500,68 @@ error_reporting(E_ERROR | E_PARSE);
                                                     </div>
 
                                                 </div>
-
+                                            </div>                                    
                                                   
                                     </div>
                                 </div>
                                 <div class="container-items-step" data-id="2" style="display:none">
-                                        <div class="d-flex justify-content-between align-items-center flex-column-max">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="col-md-6 form-control-input">
-                                                    <label for="" class="color-blue" style="font-weight: 700">Seleccione meses de pago</label>   
-                                                    <div class="">
-                                                        
-                                                
-
-                                                                <div class="cont_select_center">
-                                                                    <div class="select_mate" data-mate-select="active" >
-                                                                    <select name="" onchange="" onclick="return false;" id="">
-                                                                        <option value=""  >Seleciona una Opcion </option>
-                                                                        <option value="1">Select option 1</option>
-                                                                        <option value="2" >Select option 2</option>
-                                                                        <option value="3">Select option 3</option>
-                                                                    </select>
-                                                                    <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
-                                                                    <span onclick="open_select(this)" class="icon_select_mate" >
-                                                                        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                                                            <path d="M0-.75h24v24H0z" fill="none"/>
-                                                                        </svg>
-                                                                    </span>
-                                                                        <div class="cont_list_select_mate">
-                                                                            <ul class="cont_select_int">  </ul> 
-                                                                        </div>
-                                                                    </div>
-                                                                </div> 
-                                                        </div>
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <div class="price-big underline">
-                                                    $19.990 x 6 MESES
-                                                </div>
+                                    <div class="d-flex justify-content-between align-items-center flex-column" style="width:100%">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="col-md-6 form-control-input">
+                                                <label for="" class="color-blue" style="font-weight: 700">Seleccione meses de pago</label>   
+                                                <div class="edit-select">
+                                                    <select name="" onchange=""  id="tipo_pago">
+                                                    <?php for($i = 1; $i <= sizeof($tipo_pago); $i++){ ?>
+                                                        <?php if($i == 1){ ?>
+                                                            <option selected id="<?php echo $num_mes[$i - 1]?>" value="<?php echo $cod_pago[$i - 1]?>"><?php echo $tipo_pago[$i - 1]?></option>
+                                                        <?php } else { ?>
+                                                            <option id="<?php echo $num_mes[$i - 1]?>" value="<?php echo $cod_pago[$i - 1]?>"><?php echo $tipo_pago[$i - 1]?></option>
+                                                        <?php } ?>
+                                                    <?php } ?>
+                                                    </select>
                                             </div>
                                         </div>
-                                        <div class="m-t-40 d-flex flex-column">
-                                            <div class="d-flex justify-content-between align-items-center m-b-15">
-                                                <div class="d-flex text-muted">
-                                                    Precio sin descuento:
-                                                </div>
-                                                <div class="text-bold">
-                                                    $199.400
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-between align-items-center m-b-25">
-                                                <div class="d-flex text-muted">
-                                                    % de descuento:
-                                                </div>
-                                                <div class="text-bold">
-                                                    $11.900
-                                                </div>
-                                            </div>
-                                         
-                                            <div class="d-flex justify-content-between align-items-center total-container">
-                                                <div class="d-flex text-bold">
-                                                    Total a pagar:
-                                                </div>
-                                                <div class="text-bold">
-                                                    $107.460
-                                                </div>
+                                        <div class="">
+                                            <div class="price-big underline">
+                                                $19.990 x 6 MESES
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="m-t-40 d-flex flex-column" style="width:100%">
+                                        <div class="d-flex justify-content-between align-items-center m-b-15">
+                                            <div class="d-flex text-muted">
+                                                Precio sin descuento:
+                                            </div>
+                                            <div class="text-bold">
+                                                <p id="resalto"><a id="precio_sin_dscto">$</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center m-b-25">
+                                            <div class="d-flex text-muted">
+                                                % de descuento:
+                                            </div>
+                                            <div class="text-bold">
+                                                <p id="resalto"><a id="ahorro">$</a></p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-content-between align-items-center total-container">
+                                            <div class="d-flex text-bold">
+                                                Total a pagar:
+                                            </div>
+                                            <div class="text-bold">
+                                                <p id="resalto2"><a id="valor_pagar">$</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="m-t-25">
+                                        <label class="container">
+                                            <input id="tyc" type="checkbox">
+                                            <span class="checkmark"></span>
+                                            <a href="docu/Terminos%20y%20Condiciones%20REST911.pdf" download="">Acepto Terminos y Condiciones</a>
+                                            
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -602,6 +587,8 @@ error_reporting(E_ERROR | E_PARSE);
 
     
 
+    <script src="js/formulario2.js"></script>
+    <script src="js/ajax2.js"></script>
     <script src="js/app.js?v=<?php echo $randomNumber; ?>"></script>
     <script src="js/datapicker.js"></script>
     <script>

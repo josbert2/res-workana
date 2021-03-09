@@ -8,46 +8,20 @@ class ComposerStaticInita8dd541011da98f8f53e8eb4fde47caf
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        'fe96d013bc66df5d09201e9f0efbf9cd' => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/webpay_rest/oneclick/Oneclick.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (
-            'Transbank\\Webpay\\WebpayPlus\\Exceptions\\' => 39,
-            'Transbank\\Webpay\\WebpayPlus\\' => 28,
-            'Transbank\\Webpay\\Oneclick\\Exceptions\\' => 37,
-            'Transbank\\Webpay\\Oneclick\\' => 26,
-            'Transbank\\Webpay\\Exceptions\\' => 28,
-            'Transbank\\Webpay\\' => 17,
-            'Transbank\\Utils\\' => 16,
-            'Transbank\\TransaccionCompleta\\Exceptions\\' => 41,
-            'Transbank\\TransaccionCompleta\\' => 30,
-            'Transbank\\Patpass\\PatpassComercio\\Exceptions\\' => 45,
-            'Transbank\\Patpass\\PatpassComercio\\' => 34,
-            'Transbank\\Patpass\\PatpassByWebpay\\Exceptions\\' => 45,
-            'Transbank\\Patpass\\PatpassByWebpay\\' => 34,
-            'Transbank\\Patpass\\Exceptions\\' => 29,
-            'Transbank\\Patpass\\' => 18,
-            'Transbank\\Onepay\\Exceptions\\' => 28,
-            'Transbank\\Onepay\\' => 17,
             'Transbank\\' => 10,
-        ),
-        'S' => 
-        array (
-            'Symfony\\Polyfill\\Php72\\' => 23,
-            'Symfony\\Polyfill\\Mbstring\\' => 26,
-            'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
         ),
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
+            'Psr\\Http\\Client\\' => 16,
         ),
         'G' => 
         array (
@@ -58,107 +32,17 @@ class ComposerStaticInita8dd541011da98f8f53e8eb4fde47caf
     );
 
     public static $prefixDirsPsr4 = array (
-        'Transbank\\Webpay\\WebpayPlus\\Exceptions\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/webpay_rest/webpay_plus/exceptions',
-        ),
-        'Transbank\\Webpay\\WebpayPlus\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/webpay_rest/webpay_plus',
-        ),
-        'Transbank\\Webpay\\Oneclick\\Exceptions\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/webpay_rest/oneclick/exceptions',
-            1 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/webpay_rest/oneclick/mall/exceptions',
-        ),
-        'Transbank\\Webpay\\Oneclick\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/webpay_rest/oneclick',
-            1 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/webpay_rest/oneclick/inscription',
-            2 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/webpay_rest/oneclick/mall',
-        ),
-        'Transbank\\Webpay\\Exceptions\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/webpay_rest/exceptions',
-        ),
-        'Transbank\\Webpay\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/webpay',
-            1 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/webpay/soap',
-            2 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/webpay_rest',
-            3 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/webpay_rest/webpay_plus',
-        ),
-        'Transbank\\Utils\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/utils',
-        ),
-        'Transbank\\TransaccionCompleta\\Exceptions\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/transaccion_completa/exceptions',
-            1 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/transaccion_completa/mall/exceptions',
-        ),
-        'Transbank\\TransaccionCompleta\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/transaccion_completa',
-            1 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/transaccion_completa/inscription',
-            2 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/transaccion_completa/transaction',
-            3 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/transaccion_completa/mall',
-            4 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/transaccion_completa/mall/transaction',
-        ),
-        'Transbank\\Patpass\\PatpassComercio\\Exceptions\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/patpass/patpass_comercio/exceptions',
-        ),
-        'Transbank\\Patpass\\PatpassComercio\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/patpass/patpass_comercio',
-            1 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/patpass/patpass_comercio/inscription',
-        ),
-        'Transbank\\Patpass\\PatpassByWebpay\\Exceptions\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/patpass/patpass_by_webpay/exceptions',
-        ),
-        'Transbank\\Patpass\\PatpassByWebpay\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/patpass/patpass_by_webpay',
-        ),
-        'Transbank\\Patpass\\Exceptions\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/patpass/exceptions',
-        ),
-        'Transbank\\Patpass\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/patpass',
-            1 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/patpass/patpass_by_webpay',
-        ),
-        'Transbank\\Onepay\\Exceptions\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/onepay/exceptions',
-        ),
-        'Transbank\\Onepay\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/onepay',
-            1 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib/onepay/utils',
-        ),
         'Transbank\\' => 
         array (
-            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/lib',
-        ),
-        'Symfony\\Polyfill\\Php72\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
-        ),
-        'Symfony\\Polyfill\\Mbstring\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
-        ),
-        'Symfony\\Polyfill\\Intl\\Idn\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-intl-idn',
+            0 => __DIR__ . '/..' . '/transbank/transbank-sdk/src',
         ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Psr\\Http\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-client/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -174,11 +58,16 @@ class ComposerStaticInita8dd541011da98f8f53e8eb4fde47caf
         ),
     );
 
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInita8dd541011da98f8f53e8eb4fde47caf::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInita8dd541011da98f8f53e8eb4fde47caf::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInita8dd541011da98f8f53e8eb4fde47caf::$classMap;
 
         }, null, ClassLoader::class);
     }
