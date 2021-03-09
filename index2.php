@@ -46,6 +46,7 @@ error_reporting(E_ERROR | E_PARSE);
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous">
     </script>
+    <link href="css/datepicker.css?v=<?php echo $randomNumber; ?>" rel="stylesheet">
 </head>
 <body>
      <!-- Google Tag Manager (noscript) -->
@@ -467,31 +468,7 @@ error_reporting(E_ERROR | E_PARSE);
                                                 </div>
                                                 <div class="col-md-6 form-control-input">
                                                     <label for="">Fecha de Naimiento*</label>   
-                                                    <div class="">
-                                                        
-                                                
-
-                                                                <div class="cont_select_center">
-                                                                    <div class="select_mate" data-mate-select="active" >
-                                                                    <select name="" onchange="" onclick="return false;" id="">
-                                                                        <option value=""  >Seleciona una Opcion </option>
-                                                                        <option value="1">Select option 1</option>
-                                                                        <option value="2" >Select option 2</option>
-                                                                        <option value="3">Select option 3</option>
-                                                                    </select>
-                                                                    <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
-                                                                    <span onclick="open_select(this)" class="icon_select_mate" >
-                                                                        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                                                            <path d="M0-.75h24v24H0z" fill="none"/>
-                                                                        </svg>
-                                                                    </span>
-                                                                        <div class="cont_list_select_mate">
-                                                                            <ul class="cont_select_int">  </ul> 
-                                                                        </div>
-                                                                    </div>
-                                                                </div> 
-                                                        </div>
+                                                    <input type="text" data-toggle="datepicker">
                                                 </div>
                                                 <div class="col-md-6 form-control-input">
                                                     <label for="">Teléfono*</label>
@@ -501,35 +478,16 @@ error_reporting(E_ERROR | E_PARSE);
                                                     <label for="">Dirección*</label>
                                                     <input type="text" placeholder="Nombre">
                                                 </div> 
-                                                <div class="col-md-6 form-control-input">
+                                                <div class="col-md-6 form-control-input edit-select">
                                                     <label for="">Ciudad*</label>   
-                                                        <div class="">
-                                                            
-                                                    
-
-                                                                    <div class="cont_select_center">
-                                                                        <div class="select_mate" data-mate-select="active" >
-                                                                        <select name="" onchange="" onclick="return false;" id="">
-                                                                            <option value=""  >Seleciona una Opcion </option>
-                                                                            <option value="1">Select option 1</option>
-                                                                            <option value="2" >Select option 2</option>
-                                                                            <option value="3">Select option 3</option>
-                                                                        </select>
-                                                                        <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
-                                                                        <span onclick="open_select(this)" class="icon_select_mate" >
-                                                                            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                                                                <path d="M0-.75h24v24H0z" fill="none"/>
-                                                                            </svg>
-                                                                        </span>
-                                                                            <div class="cont_list_select_mate">
-                                                                                <ul class="cont_select_int">  </ul> 
-                                                                            </div>
-                                                                        </div>
-                                                                    </div> 
-                                                            </div>
-                                                    </div>
-                                            
+                                                    <select required="" class="input " id="comunas">
+                                                        <option value="ANTOFAGASTA">ANTOFAGASTA</option>
+                                                        <option value="CALAMA">CALAMA</option>
+                                                        <option value="COPIAPO">COPIAPO</option>
+                                                        <option value="COQUIMBO">COQUIMBO</option>
+                                                        <option value="LA SERENA">LA SERENA</option>
+                                                        <option value="SANTIAGO">SANTIAGO</option>
+                                                    </select>
                                             </div>
 
 
@@ -645,6 +603,10 @@ error_reporting(E_ERROR | E_PARSE);
     
 
     <script src="js/app.js?v=<?php echo $randomNumber; ?>"></script>
+    <script src="js/datapicker.js"></script>
+    <script>
+    $('[data-toggle="datepicker"]').datepicker();
+    </script>
     <?php 
     include('admin/est/footerp.php');
     ?>

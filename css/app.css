@@ -5,7 +5,12 @@
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/muli/v22/7Aulp_0qiz-aVz7u3PJLcUMYOFnOkHkw.ttf) format('truetype');
 }
-
+.edit-select select{
+  border:solid #0049a2 1px;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
 .select-editable {
   position:relative; background-color:white; border:solid #0049a2 1px; height: 100%;
   width: 100%;
