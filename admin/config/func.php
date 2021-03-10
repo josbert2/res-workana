@@ -32,7 +32,7 @@
     function getNumPlanes(){
         $conn       = getConn();
         $sql        = "SELECT COUNT(*) as num_planes FROM planes WHERE est_plan = 's'";
-        $query      = mysqli_query($conn, $sql);
+        $query      = mysqli_query($conn, $sql) or die( mysqli_error($conn));
         $result     = mysqli_fetch_array($query);
         $num_planes = $result['num_planes'];
         return $num_planes;

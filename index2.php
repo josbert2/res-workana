@@ -1,7 +1,6 @@
 
 <?php
-error_reporting(E_ERROR | E_PARSE);
-  
+
     include_once('admin/config/func.php');
     $num_benef      = 7;
     $num_planes     = getNumPlanes();
@@ -172,7 +171,9 @@ error_reporting(E_ERROR | E_PARSE);
                 <h2 class="main-text__section m-t-10 m-b-45">Suscríbete a nuestros planes</h2>
 
                 <div class="section__tables">
-                    <div class="table__pricing">
+                    <input type="radio" name="plan" id="option-1" value="1" checked>
+                    <input type="radio" name="plan" id="option-2" value="2">
+                    <label class="table__pricing option option-1 m-r-10" for="option-1">
                         <div class="title__pricing m-b-10">
                             Plan Sin Copago
                         </div>
@@ -213,8 +214,8 @@ error_reporting(E_ERROR | E_PARSE);
                                 SIGUIENTE
                             </button>
                         </div>
-                    </div>
-                    <div class="table__pricing">
+                    </label>
+                    <label class="table__pricing option option-2" for="option-2">
                         <div class="title__pricing m-b-10">
                             Plan Sin Copago
                         </div>
@@ -255,7 +256,7 @@ error_reporting(E_ERROR | E_PARSE);
                                 SIGUIENTE
                             </button>
                         </div>
-                    </div>
+                    </label>
                 </div>
                 <small class="m-t-45" style="text-align:center;margin-top: 50px;display:block">*El cargo de nuestras suscripciones se realizará de forma automática</small>
         </section>
@@ -341,13 +342,13 @@ error_reporting(E_ERROR | E_PARSE);
                                                                     <?php } ?>
                                                                 <?php } ?>
                                                         </select>
-                                                        <input type="text" style="border-radius: 5px 0 0 5px;" name="format" value=""/>
+                                                        <input type="text" style="border-radius: 5px 0 0 5px;" id="dia" placeholder="Día" name="format" value=""/>
                                                     </div>
                                                    
                                                 </div>
                                                 <div class="m-r-10" style="    flex: 1 1 100%;">
                                                     <div class="select-editable">
-                                                        <select id="dia" onchange="this.nextElementSibling.value=this.value">
+                                                        <select id="mes" onchange="this.nextElementSibling.value=this.value">
                                                             <option selected="true" disabled="disabled" value="0">mes</option>
                                                             <?php for($i = 1; $i <= 12; $i++){ ?>
                                                                 <?php if($i < 10){ ?>
@@ -357,19 +358,19 @@ error_reporting(E_ERROR | E_PARSE);
                                                                 <?php } ?>
                                                             <?php } ?>
                                                         </select>
-                                                        <input type="text" name="format" value=""/>
+                                                        <input type="text" name="format" value="" id="mes" placeholder="Mes"/>
                                                      </div>
                                                      
                                                 </div>
                                                 <div class="" style="    flex: 1 1 100%;">
                                                     <div class="select-editable" style="border-radius: 0 5px 5px 0">
-                                                        <select style="border-radius: 0 5px 5px 0" id="ano" onchange="this.nextElementSibling.value=this.value">
+                                                        <select style="border-radius: 0 5px 5px 0"  onchange="this.nextElementSibling.value=this.value">
                                                             <option selected="true" disabled="disabled" value="0">año</option>
                                                             <?php for($i = 1920; $i <= 2020; $i++){ ?>
                                                             <option value="<?php echo $i?>"><?php echo $i?></option>
                                                             <?php } ?>
                                                         </select>
-                                                        <input type="text" name="format" value=""/>
+                                                        <input type="text" name="format" value="" id="ano" placeholder="Año"/>
                                                     </div>
                                                  
                                                 </div>
@@ -391,8 +392,8 @@ error_reporting(E_ERROR | E_PARSE);
                                             <div class="col-md-6 form-control-input">
                                                 <label for="">Ciudad*</label>   
                                                 <div class="">
-                                                            <div class="cont_select_center">
-                                                                <div class="select_mate" data-mate-select="active" >
+                                                            <div class="edit-select">
+                                                               
                                                                 <select name="" onchange=""  id="comunas">
                                                                     <option value="ANTOFAGASTA">ANTOFAGASTA</option>
                                                                     <option value="CALAMA">CALAMA</option>
@@ -401,17 +402,7 @@ error_reporting(E_ERROR | E_PARSE);
                                                                     <option value="LA SERENA">LA SERENA</option>
                                                                     <option value="SANTIAGO">SANTIAGO</option>
                                                                 </select>
-                                                                <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
-                                                                <span onclick="open_select(this)" class="icon_select_mate" >
-                                                                    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                                                        <path d="M0-.75h24v24H0z" fill="none"/>
-                                                                    </svg>
-                                                                </span>
-                                                                    <div class="cont_list_select_mate">
-                                                                        <ul class="cont_select_int">  </ul> 
-                                                                    </div>
-                                                                </div>
+                                                                
                                                             </div> 
                                                     </div>
                                             </div>
@@ -424,7 +415,7 @@ error_reporting(E_ERROR | E_PARSE);
                                                 <input type="email" id="correo_conf"   placeholder="Correo Electrónico">
                                             </div>
                                             <div class="col-md-12">
-                                                <input id="check_benef" type="checkbox"  id="soy_benef">
+                                                <input id="check_benef" type="checkbox"  >
                                                 <label for="check_benef" style="font-weight: 900">Soy beneficiario</label>
                                             </div>
                                             <div class="col-md-12">
@@ -439,70 +430,67 @@ error_reporting(E_ERROR | E_PARSE);
                                                     Datos del Titular Beneficiario
                                                 </div>
                                             </div>  
-                                            <div class="">
-                                                <div class="beneficiario-item-collapse">
-                                                    Beneficiario 1
-                                                </div>
-                                          
-                                                <div class="row">
-                                                
-                                                        <div class="col-md-12 form-control-input">
-                                                            <label for="">Nombre*</label>
-                                                            <input type="text" placeholder="Nombre">
-                                                        </div>
-                                                        <div class="col-md-6 form-control-input">
-                                                            <label for="">Apellido Paterno*</label>
-                                                            <input type="text" placeholder="Nombre">
-                                                        </div>
-                                                        <div class="col-md-6 form-control-input">
-                                                            <label for="">Apellido Materno*</label>
-                                                            <input type="text" placeholder="Nombre">
-                                                        </div>
-                                                        <div class="col-md-6 form-control-input">
-                                                            <label for="">Fecha de Naimiento*</label>   
-                                                            <input type="text" data-toggle="datepicker">
-                                                        </div>
-                                                        <div class="col-md-6 form-control-input">
-                                                            <label for="">Teléfono*</label>
-                                                            <input type="text" placeholder="Nombre">
-                                                        </div> 
-                                                        <div class="col-md-6 form-control-input">
-                                                            <label for="">Dirección*</label>
-                                                            <input type="text" placeholder="Nombre">
-                                                        </div> 
-                                                        <div class="col-md-6 form-control-input edit-select">
-                                                            <label for="">Ciudad*</label>   
-                                                            <select required="" class="input " id="comunas">
-                                                                <option value="ANTOFAGASTA">ANTOFAGASTA</option>
-                                                                <option value="CALAMA">CALAMA</option>
-                                                                <option value="COPIAPO">COPIAPO</option>
-                                                                <option value="COQUIMBO">COQUIMBO</option>
-                                                                <option value="LA SERENA">LA SERENA</option>
-                                                                <option value="SANTIAGO">SANTIAGO</option>
-                                                            </select>
-                                                    </div>
-
-
-                                                </div>
-
+                                            <div >
+                                            
                                                 <div class="col-md-12">
                                                         (*) Campos obligatorios
                                                    
                                                 </div>
-                                                <div class="col-md-12">
-                                                    <div class="m-t-20">
-                                                        <button type="button" class="btn__table__main color__secondary__main back_to_steps">
-                                                            VOLVER
-                                                        </button>
-                                                        <button   type="button" class="btn__table__main m-l-15">
-                                                            CONTINUAR
-                                                        </button>
-                                                    </div>
-
-                                                </div>
+                                               
                                             </div>                                    
                                                   
                                     </div>
+
+                                    
+
+
+
+                                    <div class="beneficiarios" id="beneficiarios" style="display:none">
+                                                    <div class="beneficiario-item-collapse">
+                                                        Beneficiario 1
+                                                    </div>
+                                            
+                                                    <div class="row">
+                                                    
+                                                            <div class="col-md-12 form-control-input">
+                                                                <label for="">Nombre*</label>
+                                                                <input type="text" placeholder="Nombre">
+                                                            </div>
+                                                            <div class="col-md-6 form-control-input">
+                                                                <label for="">Apellido Paterno*</label>
+                                                                <input type="text" placeholder="Nombre">
+                                                            </div>
+                                                            <div class="col-md-6 form-control-input">
+                                                                <label for="">Apellido Materno*</label>
+                                                                <input type="text" placeholder="Nombre">
+                                                            </div>
+                                                            <div class="col-md-6 form-control-input">
+                                                                <label for="">Fecha de Naimiento*</label>   
+                                                                <input type="text" data-toggle="datepicker">
+                                                            </div>
+                                                            <div class="col-md-6 form-control-input">
+                                                                <label for="">Teléfono*</label>
+                                                                <input type="text" placeholder="Nombre">
+                                                            </div> 
+                                                            <div class="col-md-6 form-control-input">
+                                                                <label for="">Dirección*</label>
+                                                                <input type="text" placeholder="Nombre">
+                                                            </div> 
+                                                            <div class="col-md-6 form-control-input edit-select">
+                                                                <label for="">Ciudad*</label>   
+                                                                <select required="" class="input " id="comunas">
+                                                                    <option value="ANTOFAGASTA">ANTOFAGASTA</option>
+                                                                    <option value="CALAMA">CALAMA</option>
+                                                                    <option value="COPIAPO">COPIAPO</option>
+                                                                    <option value="COQUIMBO">COQUIMBO</option>
+                                                                    <option value="LA SERENA">LA SERENA</option>
+                                                                    <option value="SANTIAGO">SANTIAGO</option>
+                                                                </select>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
                                 </div>
                                 <div class="container-items-step" data-id="2" style="display:none">
                                     <div class="d-flex justify-content-between align-items-center flex-column" style="width:100%">
@@ -561,18 +549,30 @@ error_reporting(E_ERROR | E_PARSE);
                                             <a href="docu/Terminos%20y%20Condiciones%20REST911.pdf" download="">Acepto Terminos y Condiciones</a>
                                             
                                         </label>
+                                        <button type="submit" id="btn_pagar" class="btn-primary-closed">Pagar</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                        
-                        <div class="d-flex align-items-center justify-content-center btn-steps">
+                        <div class="less-flex align-items-center justify-content-center btn-steps">
                             <button type="button" id="next" class="btn-primary-closed">SIGUIENTE</button>
                             <div class="m-l-10">
-                                <button class="btn__table__main" id="step_2_btn" type="button" style="display:none">
+                                <!--id="step_2_btn"-->
+                                <button class="btn__table__main" id="cont_benef"  type="button" style="display:none">
                                     REGISTRAR BENEFICIARIOS
                                 </button>
                             </div>
+                        </div>
+                        <div class="less-flex btn-accion-beneficiario flex-column-max" style="display:none">
+                                <button type="button" id="cont_titular" class="btn-primary-closed m-r-10" style="display:none">Volver</button>                            
+                                <button class="btn__table__main" id="cont_modal"  type="button"  data-toggle="modal" data-target="#exampleModalCenter" style="display:none">
+                                   Continuar
+                                </button>                                  
+
+                        </div>
+                        <div>
+
                         </div>
                     </div>
                 </div>
@@ -582,13 +582,32 @@ error_reporting(E_ERROR | E_PARSE);
 	
         </section>
     </main>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Aviso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Al continuar no podrá volver a editar los datos del formulario, está seguro que desea continuar de todos modos?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
+                    <button type="button" class="btn btn-primary" id="conf_modal" data-dismiss="modal">Continuar</button>
+                </div>
+            </div>
+        </div>
+    </div>
   
   
 
     
 
     <script src="js/formulario2.js"></script>
-    <script src="js/ajax2.js"></script>
+    <script src="js/ajax2.js?v=<?php echo $randomNumber; ?>"></script>
     <script src="js/app.js?v=<?php echo $randomNumber; ?>"></script>
     <script src="js/datapicker.js"></script>
     <script>

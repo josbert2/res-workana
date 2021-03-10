@@ -1,3 +1,4 @@
+
 jQuery(document).ready(function(){
     function deleteAllCookies() {
         var cookies = document.cookie.split(";");
@@ -69,7 +70,8 @@ jQuery(document).ready(function(){
                 ano_html += '<option value="' + i + '">' + i + '</option>';
             }
             for(i = 1; i <= benef; i++){
-                html += '<div class="benef"><div class="caja_info"><div class="titulo_caja"><div class="nombre_caja">Beneficiario ' + i + '</div></div><div class="contenido_caja"><input required class="input" type="text" id="nombres_' + i + '"    placeholder="Nombres"><input required class="input" type="text" id="apellido_p_' + i + '" placeholder="Apellido  Paterno"><input required class="input" type="text" id="apellido_m_' + i + '" placeholder="Apellido  Materno"><div class="flex" id="fecha_nac_' + i + '"><select required class="input" id="dia_' + i + '">' + dia_html + '</select><select required class="input middle"  id="mes_' + i + '">' + mes_html +  '</select><select class="input" id="ano_' + i + '">' + ano_html + '</select></div></div></div></div>';
+                //html += '<div class="benef"><div class="caja_info"><div class="titulo_caja"><div class="nombre_caja">Beneficiario ' + i + '</div></div><div class="contenido_caja"><input required class="input" type="text" id="nombres_' + i + '"    placeholder="Nombres"><input required class="input" type="text" id="apellido_p_' + i + '" placeholder="Apellido  Paterno"><input required class="input" type="text" id="apellido_m_' + i + '" placeholder="Apellido  Materno"><div class="flex" id="fecha_nac_' + i + '"><select required class="input" id="dia_' + i + '">' + dia_html + '</select><select required class="input middle"  id="mes_' + i + '">' + mes_html +  '</select><select class="input" id="ano_' + i + '">' + ano_html + '</select></div></div></div></div>';
+                html += '<div class="benef"> <div class="caja_info"> <div class="titulo_caja"> <div class="nombre_caja">Beneficiario ' + i + '</div></div><div class="contenido_caja"> <div class="d-flex justify-content-between beneficiario-grid"> <div class="form-control-input"> <label for="">Nombre</label> <input required class="input" type="text" id="nombres_' + i + '" placeholder="Nombres"> </div><div class="form-control-input"> <label for="">Apellido Paterno</label> <input required class="input" type="text" id="apellido_p_' + i + '" placeholder="Apellido Paterno"> </div><div class="form-control-input"> <label for="">Apellido Materno</label> <input required class="input" type="text" id="apellido_m_' + i + '" placeholder="Apellido Materno"> </div></div><div class="flex d-flex form-control-input flex-column" id="fecha_nac_' + i + '"> <label for="">Fecha de Nacimiento</label> <div class="d-flex"> <div class="form-control-input edit-select m-r-15"> <select required class="input" id="dia_' + i + '">' + dia_html + '</select> </div><div class="form-control-input edit-select m-r-15"> <select required class="input middle" id="mes_' + i + '">' + mes_html + '</select> </div><div class="form-control-input edit-select"> <select class="input" id="ano_' + i + '">' + ano_html + '</select> </div></div></div></div></div></div>';
             }   
             $('#beneficiarios').html(html);
         }
@@ -96,6 +98,12 @@ jQuery(document).ready(function(){
             $('#dia_1').prop("disabled", true);
             $('#mes_1').prop("disabled", true);
             $('#ano_1').prop("disabled", true);
+        }
+
+        if (benef > 1){
+            StepActive = 1
+        }else{
+            StepActive = 0
         }
     });
     
@@ -310,7 +318,7 @@ function hasNumbers(t)
 }    
 
 function hideTitular(){
-    jQuery('.titular').toggle('hide');
+    jQuery('#titular').toggle('hide');
     jQuery('#soy_benef').toggle('hide');
     jQuery('#cont_benef').toggle('hide');
 }
@@ -616,10 +624,17 @@ function verificarTitular(){
     
     if(msg != "Para poder continuar debe completar los siguientes campos: "){
         alert(msg);
+        hideTitular();
+        showBeneficiarios();
+        $('.btn-steps').hide()
+        $('.btn-accion-beneficiario').show()
     }
     else{
         hideTitular();
         showBeneficiarios();
+        $('.btn-steps').hide()
+        $('.btn-accion-beneficiario').show()
+      
     }
 }
 
@@ -656,6 +671,8 @@ function verifyForm(){
     
     if(verificarBeneficiarios()){
         registrarTitular();
+        $('.container-items-step').hide()
+        $('.container-items-step[data-id="2"]').show()
     }
     else{
         alert("Debe completar todos los campos de los beneficiarios y de forma válida");

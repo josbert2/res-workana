@@ -22,13 +22,15 @@ $(document).ready(function(){
     
     //Cambia el Valor Mensual cuando se cambia la cantidad de beneficiarios
     $('#num_benef').change(function(){
-        var plan = $("input:radio[name=plan]:checked").val();
+
+        var plan = $("input:checkbox[name=e]:checked").val();
         var benef = $("#num_benef").val();
         $.ajax({
             url: 'admin/config/ajax2.php',
             type: 'POST',
             data: {plan_id: plan, num_benef: benef},
             success: function(data){
+                console.log(data)
                 if(data){
                     var result = "$" + data;
                     $('#valor_mensual').html(result);
@@ -52,6 +54,7 @@ $(document).ready(function(){
             dataType: "json",
             data: {plan_id: plan, num_benef: benef, tipo_pago: pago},
             success: function(data){
+                console.log(data)
                 if((data[0] != null) && (data[1] != null) && (data[2] != null)){
                     var precio_sin_dscto = data[0];
                     var valor_pagar = data[1];
@@ -74,7 +77,7 @@ $(document).ready(function(){
         var plan = $("input:radio[name=plan]:checked").val();
         var benef = $("#num_benef").val();
         var select = document.getElementById("tipo_pago");
-        var pago = select.options[select.selectedIndex].value;
+        var pago = 0 // select.options[select.selectedIndex].value;
         $.ajax({
             url: 'admin/config/ajax2.php',
             type: 'POST',
@@ -110,6 +113,7 @@ $(document).ready(function(){
             dataType: "json",
             data: {plan_id: plan, num_benef: benef, tipo_pago: pago},
             success: function(data){
+                console.log(data)
                 if((data[0] != null) && (data[1] != null) && (data[2] != null)){
                     var precio_sin_dscto = data[0];
                     var valor_pagar = data[1];

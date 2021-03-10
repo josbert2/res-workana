@@ -9,7 +9,7 @@ $db         = "restcl"; */
 $servername = "localhost";
 $userbase   = "root";
 $password   = "";
-$db         = "restcl";
+$db         = "res";
 
 // Create connection
 $conn = mysqli_connect($servername, $userbase, $password, $db);

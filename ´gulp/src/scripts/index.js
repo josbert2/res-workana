@@ -3,12 +3,21 @@ const progress = document.getElementById('progress')
 const next = document.getElementById('next')
 const circles = document.querySelectorAll('.circle')
 const stepContainer = $('.container-items-step')
-
-
+// or in jQuery use: select = this;
+var StepActive = 0
+function vald(){
+    var select = document.getElementById('num_benef'); 
+    if (select.value) {
+    // value is set to a valid option, so submit form
+    return true;
+    }
+    return false;
+}
 let currentActive = 1
 
 next.addEventListener('click', () => {
   currentActive++
+  StepActive = vald()
 
   if(currentActive > circles.length){
     currentActive = circles.length
@@ -25,23 +34,32 @@ update()
 
 
 function update(){
-  circles.forEach((circle, idx) => {
+    if (StepActive){
+        circles.forEach((circle, idx) => {
+            
+        
+            if (idx < currentActive) {
+                circle.classList.add('active')
+                stepContainer.hide()
+                $('.container-items-step[data-id=' + idx + ']').show()
+                if (idx == 1){
+                    
+                $('#step_2_btn').show()
+                $('#cont_benef').show()
+                }else{
+                $('#step_2_btn').hide()
+                $('#cont_benef').hide()
+                }
+            }else{
+                circle.classList.remove('active')
+            
+            }
     
-    if (idx < currentActive) {
-      circle.classList.add('active')
-      stepContainer.hide()
-      $('.container-items-step[data-id=' + idx + ']').show()
-      if (idx == 1){
-          
-        $('#step_2_btn').show()
-      }else{
-        $('#step_2_btn').hide()
-      }
+        
+    })
     }else{
-      circle.classList.remove('active')
-    
-    }
-  })
+        
+        }
 
 
   const actives = document.querySelectorAll('.active')
@@ -49,13 +67,7 @@ function update(){
   progress.style.width = (actives.length - 1) / (circles.length - 1) * 100 + '%'
 
 
-  if(currentActive ===1){
-   
-  }else if (currentActive === circles.length) {
-    next.disabled = true
-  }else{
-    next.disabled = false
-  }
+  
 }
 
 

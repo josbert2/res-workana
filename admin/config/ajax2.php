@@ -216,6 +216,7 @@
             $conn      = getConn();
             $plan_id   = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['plan_id']));
             $num_benef = htmlspecialchars(mysqli_real_escape_string($conn, $_POST['num_benef']));
+            echo $num_benef;
             $data      = array();
             $sql       = "CALL TRAER_VALORES($plan_id, $num_benef, 1);";
             $query     = mysqli_query($conn, $sql);

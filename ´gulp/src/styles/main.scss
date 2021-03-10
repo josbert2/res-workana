@@ -125,7 +125,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 56vh;
+	height: 76vh;
 	
 	box-sizing: border-box;
 	color: white;
@@ -136,7 +136,9 @@ body{
   @include r(768){
     height: 64vh;
   }
-}@include r(768){
+}
+
+@include r(768){
   .navbar-toggler-icon{
     display:none
   }
@@ -904,3 +906,86 @@ form{
   .flex{
     flex: 1 1 auto;
   }
+
+
+
+  
+
+  .section__tables{
+    input[type="radio"]{
+      display: none;
+    }
+    label{
+      cursor: pointer;
+    }
+    .color-default{
+        line-height: 42px;
+    }
+    .price__pricing{
+      line-height: 42px;
+    }
+    input[type='checkbox']+label{
+      line-height: inherit;
+      display: inline-block;
+      vertical-align: top;
+      cursor: pointer;
+      margin-left: 0;
+      &:last-child{
+        margin-left: 10px;
+      }
+    }
+  }
+  
+  #option-1:checked:checked ~ .option-1,
+  #option-2:checked:checked ~ .option-2{
+    border-color: #0069d9;
+    background: #0069d9;
+  }
+  #option-1:checked:checked ~ .option-1 .dot,
+  #option-2:checked:checked ~ .option-2 .dot{
+    background: #fff;
+  }
+  #option-1:checked:checked ~ .option-1 .dot::before,
+  #option-2:checked:checked ~ .option-2 .dot::before{
+    opacity: 1;
+    transform: scale(1);
+  }
+  .wrapper .option span{
+    font-size: 20px;
+    color: #808080;
+  }
+  #option-1:checked:checked ~ .option-1 span,
+  #option-2:checked:checked ~ .option-2 span{
+    color: #fff;
+  }
+
+  #option-1:checked:checked ~ .option-1,
+  #option-2:checked:checked ~ .option-2{
+    .price__pricing{
+      color:#fff
+    }
+    .color-default{
+      color: #d0d0d0;
+    }
+    .title__pricing{
+      color:#fff
+    }
+  }
+  .less-flex{
+    display:flex;
+  }
+  .nombre_caja{
+    color:#0049a2;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  .benef{
+    padding-bottom: 32px;
+    border-bottom: 1px solid #e2e2e2;
+    margin-bottom: 21px;
+  }
+.beneficiario-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}

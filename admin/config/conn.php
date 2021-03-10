@@ -11,7 +11,7 @@ function getConn(){
         $servername = "localhost";
         $username   = "root";
         $password   = "";
-        $db         = "restcl";
+        $db         = "res_mall";
     }
 
     if(MODO2 == "I"){
