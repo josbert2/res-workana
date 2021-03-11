@@ -365,3 +365,36 @@ $('.items-collapse-primary').click(function(){
 });
 
 
+$('#tipo_pago').change(function(){
+   setTimeout(function(){
+        var precio = String($('#precio_sin_dscto').text())
+        precio  = precio.replace('$', '')
+        precio  = precio.replace('.', '')
+        var x = $('#tipo_pago :selected').attr('id')
+        var total = Math.trunc(precio / x)
+        $('#text-cuota').text(total)
+        $('#cuotas-meses').text(x)
+   }, 200)
+})
+
+
+
+function goToByScroll(id) {
+    // Remove "link" from the ID
+    id = id.replace("link", "");
+    // Scroll
+    $('html,body').animate({
+        scrollTop: $("#" + id).offset().top
+    }, 'slow');
+}
+
+$(".btn__table__main").click(function(e) {
+    // Prevent a page reload when a link is pressed
+    e.preventDefault();
+    // Call the scroll function
+    goToByScroll('suscribir');
+    var text = $(this).closest('.table__pricing').find('.title__pricing').text()
+    $('#main-text__section').text(text)
+    var id = $(this).closest('.table__pricing').attr('for')
+    $('.' + id).click()
+});

@@ -23,7 +23,7 @@ $(document).ready(function(){
     //Cambia el Valor Mensual cuando se cambia la cantidad de beneficiarios
     $('#num_benef').change(function(){
 
-        var plan = $("input:checkbox[name=e]:checked").val();
+        var plan = $("input:radio[name=plan]:checked").val();
         var benef = $("#num_benef").val();
         $.ajax({
             url: 'admin/config/ajax2.php',
@@ -225,13 +225,14 @@ function getToken(pagos){
     var email    = $("#correo").val();
     if(pagos){
         $.ajax({
-            url: 'admin/config/ajax2.php',
+            url: location.href + '/admin/config/ajax2.php',
             type: 'POST',
             dataType: "json",
             data: {function: 'getToken',
                    pagos:    pagos,
                    email:    email},
             success: function(data){
+                console.log('getToken: ' + data)
                 sendToken(data);
                 //alert(data);
             }
@@ -270,6 +271,7 @@ function registrarBeneficiarios(pagos){
                beneficiarios: beneficiarios},
         success: function(data){
             //alert(data);
+            console.log('registrarBeneficiarios: ' + data)
         }
     });
 }
@@ -333,6 +335,7 @@ function registrarOrden(){
                    utm_campaign: utm_campaign
                   },
             success: function(data){
+                console.log('registrarOrden:  ' + data)
                 registrarBeneficiarios(data);
                 getToken(data);
                 //alert(data);

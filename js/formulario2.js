@@ -624,10 +624,7 @@ function verificarTitular(){
     
     if(msg != "Para poder continuar debe completar los siguientes campos: "){
         alert(msg);
-        hideTitular();
-        showBeneficiarios();
-        $('.btn-steps').hide()
-        $('.btn-accion-beneficiario').show()
+       
     }
     else{
         hideTitular();

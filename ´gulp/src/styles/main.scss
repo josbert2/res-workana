@@ -236,6 +236,9 @@ body{
         display: flex;
         justify-content: center;
         .table__pricing{
+            span{
+              line-height: 39px;
+            }
             background: #fff;
             padding: 30px 40px;
             border-radius: 18px;

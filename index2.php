@@ -167,17 +167,33 @@
                 </div>
             </div>
         </section>
-        <section class="padding-section reset-section suscribir" style="background: #e7f2ff">
+        <section class="padding-section reset-section suscribir"  style="background: #e7f2ff">
                 <h2 class="main-text__section m-t-10 m-b-45">Suscríbete a nuestros planes</h2>
-
+                  
                 <div class="section__tables">
-                    <input type="radio" name="plan" id="option-1" value="1" checked>
-                    <input type="radio" name="plan" id="option-2" value="2">
-                    <label class="table__pricing option option-1 m-r-10" for="option-1">
+                    <?php for($i = 1; $i <= $num_planes; $i++){ ?>
+                        <input type="radio" name="plan" id="option-<?php echo $i?>" value="<?php echo $i?>">
+                        <label class="table__pricing option option-<?php echo $i?> m-r-10" for="option-<?php echo $i?>">
                         <div class="title__pricing m-b-10">
-                            Plan Sin Copago
+                        <?php echo $nom_planes[$i - 1]?>
                         </div>
                         <div class=" color-default">
+                            Desde
+                        </div>
+                        <div class="price__pricing">
+                            <?php if ($i == 1){ 
+                                echo '$19.990';
+                                }else{ 
+                                    echo '$9.990';
+                                     }  ?>
+                        </div>
+                        <div class=" color-default" id="vm">
+                            Valor Mensual
+                        </div> 
+                        <p><?php echo nl2br($descrip_planes[$i - 1]);?></p>
+                        
+                       
+                        <!--<div class=" color-default">
                             Desde
                         </div>
                         <div class="price__pricing">
@@ -208,13 +224,17 @@
                             <li>
                                 <span>Pago Automático Mensual</span>
                             </li>
-                        </ul>
+                        </ul> -->
                         <div class="container__btn">
                             <button class="btn__table__main">
                                 SIGUIENTE
                             </button>
                         </div>
                     </label>
+                    <?php } ?>
+                    
+                    <!--<input type="radio" name="plan" id="option-2" value="2">
+                    
                     <label class="table__pricing option option-2" for="option-2">
                         <div class="title__pricing m-b-10">
                             Plan Sin Copago
@@ -256,13 +276,13 @@
                                 SIGUIENTE
                             </button>
                         </div>
-                    </label>
+                    </label> -->
                 </div>
                 <small class="m-t-45" style="text-align:center;margin-top: 50px;display:block">*El cargo de nuestras suscripciones se realizará de forma automática</small>
         </section>
 
-        <section class="padding-section reset-section">
-                <h2 class="main-text__section m-t-10 m-b-45">Plan Sin Copago</h2>
+        <section class="padding-section reset-section" id="suscribir">
+                <h2 class="main-text__section m-t-10 m-b-45" id="main-text__section">Plan Sin Copago</h2>
                 <div class="color-default" style="text-align:center">
                     Atención por Médicos Certificados 24 Horas, Orientación Telefónica Médica, Emisión de recetas médicas, <br> Medicamentos para iniciar un tratamiento, Ordenes de exámenes y Certificados Médicos.
                 </div>
@@ -494,8 +514,8 @@
                                 </div>
                                 <div class="container-items-step" data-id="2" style="display:none">
                                     <div class="d-flex justify-content-between align-items-center flex-column" style="width:100%">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="col-md-6 form-control-input">
+                                        <div class="d-flex justify-content-between align-items-center" style="width:100%">
+                                            <div class="form-control-input">
                                                 <label for="" class="color-blue" style="font-weight: 700">Seleccione meses de pago</label>   
                                                 <div class="edit-select">
                                                     <select name="" onchange=""  id="tipo_pago">
@@ -511,7 +531,7 @@
                                         </div>
                                         <div class="">
                                             <div class="price-big underline">
-                                                $19.990 x 6 MESES
+                                                <span id="text-cuota"></span> x <span id="cuotas-meses"></span> MESES
                                             </div>
                                         </div>
                                     </div>

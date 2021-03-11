@@ -58,7 +58,7 @@
         $desc_planes = array();
         if(mysqli_num_rows($query) > 0){
             while($row = mysqli_fetch_array($query)){
-                $desc_planes[] = $row['desc_plan'];
+                $desc_planes[] = '<span>' . $row['desc_plan'] . '</span>';
             }
         }
         return $desc_planes;
