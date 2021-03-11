@@ -41,7 +41,7 @@ $(document).ready(function(){
             }
         });
     });
-    
+    var pagoString = 0 
     //Cambia los valores de Precio Sin Dscto, Valor a Pagar y Ahorro cuando se cambia el tipo de pago
     $('#tipo_pago').change(function(){
         var plan = $("input:radio[name=plan]:checked").val();
@@ -54,7 +54,7 @@ $(document).ready(function(){
             dataType: "json",
             data: {plan_id: plan, num_benef: benef, tipo_pago: pago},
             success: function(data){
-                console.log(data)
+                pagoString = data
                 if((data[0] != null) && (data[1] != null) && (data[2] != null)){
                     var precio_sin_dscto = data[0];
                     var valor_pagar = data[1];

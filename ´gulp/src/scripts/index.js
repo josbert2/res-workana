@@ -363,3 +363,5 @@ $('.back_to_steps').click(function(){
 $('.items-collapse-primary').click(function(){
     $(this).next().toggle();
 });
+
+
